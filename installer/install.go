@@ -14,7 +14,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/awan/awan-installer/utils"
+	"github.com/whitehai11/AWaN-Installer/utils"
 )
 
 const (

@@ -7,7 +7,7 @@ import (
 	tea "github.com/charmbracelet/bubbletea"
 	"github.com/charmbracelet/lipgloss"
 
-	"github.com/awan/awan-installer/installer"
+	"github.com/whitehai11/AWaN-Installer/installer"
 )
 
 type progressMsg struct {

@@ -1,4 +1,4 @@
-module github.com/awan/awan-installer
+module github.com/whitehai11/AWaN-Installer
 
 go 1.22
 

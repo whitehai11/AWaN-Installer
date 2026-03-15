@@ -3,10 +3,10 @@ package main
 import (
 	"log"
 
-	"github.com/awan/awan-installer/installer"
-	"github.com/awan/awan-installer/ui/gui"
-	"github.com/awan/awan-installer/ui/tui"
-	"github.com/awan/awan-installer/utils"
+	"github.com/whitehai11/AWaN-Installer/installer"
+	"github.com/whitehai11/AWaN-Installer/ui/gui"
+	"github.com/whitehai11/AWaN-Installer/ui/tui"
+	"github.com/whitehai11/AWaN-Installer/utils"
 )
 
 func main() {

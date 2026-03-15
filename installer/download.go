@@ -9,7 +9,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/awan/awan-installer/utils"
+	"github.com/whitehai11/AWaN-Installer/utils"
 )
 
 const (
@@ -74,11 +74,11 @@ func releaseURL(component string, platform Platform) string {
 	name := strings.ToLower(component)
 	switch name {
 	case componentCore:
-		return fmt.Sprintf("https://github.com/awan/core/releases/latest/download/awan-core-%s-%s%s", platform.OS, platform.Architecture, platform.ArchiveExtension)
+		return fmt.Sprintf("https://github.com/whitehai11/AWaN/releases/latest/download/awan-core-%s-%s%s", platform.OS, platform.Architecture, platform.ArchiveExtension)
 	case componentGUI:
-		return fmt.Sprintf("https://github.com/awan/gui/releases/latest/download/awan-gui-%s-%s%s", platform.OS, platform.Architecture, platform.ArchiveExtension)
+		return fmt.Sprintf("https://github.com/whitehai11/AWaN-GUI/releases/latest/download/awan-gui-%s-%s%s", platform.OS, platform.Architecture, platform.ArchiveExtension)
 	case componentTUI:
-		return fmt.Sprintf("https://github.com/awan/tui/releases/latest/download/awan-tui-%s-%s%s", platform.OS, platform.Architecture, platform.ArchiveExtension)
+		return fmt.Sprintf("https://github.com/whitehai11/AWaN-TUI/releases/latest/download/awan-tui-%s-%s%s", platform.OS, platform.Architecture, platform.ArchiveExtension)
 	default:
 		return ""
 	}

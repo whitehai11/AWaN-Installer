@@ -9,7 +9,7 @@ import (
 	"github.com/wailsapp/wails/v2/pkg/options/assetserver"
 	"github.com/wailsapp/wails/v2/pkg/options/windows"
 
-	"github.com/awan/awan-installer/installer"
+	"github.com/whitehai11/AWaN-Installer/installer"
 )
 
 type App struct {

@@ -79,9 +79,9 @@ Directory structure:
 
 The installer downloads release artifacts from:
 
-- `github.com/awan/core/releases`
-- `github.com/awan/gui/releases`
-- `github.com/awan/tui/releases`
+- `github.com/whitehai11/AWaN/releases`
+- `github.com/whitehai11/AWaN-GUI/releases`
+- `github.com/whitehai11/AWaN-TUI/releases`
 
 ## Build
 
