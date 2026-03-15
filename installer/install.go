@@ -427,10 +427,18 @@ func (i *Installer) homeDir() string {
 }
 
 func (i *Installer) findCoreBinary() (string, error) {
-	expected := "awan" + i.platform.ExecutableSuffix
-	direct := filepath.Join(i.paths.Core, expected)
-	if info, err := os.Stat(direct); err == nil && !info.IsDir() {
-		return direct, nil
+	candidates := []string{
+		"awan" + i.platform.ExecutableSuffix,
+		"awan-core" + i.platform.ExecutableSuffix,
+		"AWaN" + i.platform.ExecutableSuffix,
+		"AWaN-Core" + i.platform.ExecutableSuffix,
+	}
+
+	for _, expected := range candidates {
+		direct := filepath.Join(i.paths.Core, expected)
+		if info, err := os.Stat(direct); err == nil && !info.IsDir() {
+			return direct, nil
+		}
 	}
 
 	var match string
@@ -441,9 +449,11 @@ func (i *Installer) findCoreBinary() (string, error) {
 		if entry.IsDir() {
 			return nil
 		}
-		if strings.EqualFold(entry.Name(), expected) {
-			match = path
-			return io.EOF
+		for _, expected := range candidates {
+			if strings.EqualFold(entry.Name(), expected) {
+				match = path
+				return io.EOF
+			}
 		}
 		return nil
 	})
@@ -451,7 +461,7 @@ func (i *Installer) findCoreBinary() (string, error) {
 		return "", err
 	}
 	if match == "" {
-		return "", fmt.Errorf("could not locate %q inside %s", expected, i.paths.Core)
+		return "", fmt.Errorf("could not locate a core binary inside %s", i.paths.Core)
 	}
 	return match, nil
 }

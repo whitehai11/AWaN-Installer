@@ -143,3 +143,19 @@ Desktop detection signals:
 - Windows desktop session
 
 If GUI startup fails on a detected desktop system, the installer falls back to the TUI automatically.
+
+## GitHub Releases
+
+AWaN Installer includes an automated GitHub Actions release pipeline in [build-release.yml](C:\Users\maro\Desktop\AWaN-Installer\.github\workflows\build-release.yml).
+
+When code is pushed to `main`, GitHub Actions will:
+
+- build a Windows installer executable
+- build a Linux installer binary
+- copy both outputs into `dist/`
+- create a GitHub Release named `Build <run_number>`
+- upload both binaries as release assets using the tag `auto-<run_number>`
+
+To trigger an automatic release, push or merge a commit into the `main` branch.
+
+If you want to switch from push-based releases to git-tag versioning later, change the workflow trigger from branch pushes to tag pushes such as `v*`, then use `${{ github.ref_name }}` for the release tag and release name.
